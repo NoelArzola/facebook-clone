@@ -7,11 +7,11 @@ const nextConfig = {
 module.exports = {
   images: {
     domains: [
-      "links.papareact.com",
       "platform-lookaside.fbsbx.com",
       "firebasestorage.googleapis.com",
-      "www.noelarzola.com",
+      "noelarzola.com",
+      'cdn0.iconfinder.com',
+      '1000logos.net',
     ],
   },
-  experimental: { images: { allowFutureImage: true } },
 };
