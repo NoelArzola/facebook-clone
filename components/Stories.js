@@ -5,33 +5,33 @@ import InputBox from "./InputBox";
 const stories = [
   {
     name: "Noel Arzola",
-    src: "https://www.noelarzola.com/img/hello.webp",
-    profile: "https://www.noelarzola.com/img/hello.webp",
+    src: "https://noelarzola.com/img/hello.webp",
+    profile: "https://noelarzola.com/img/hello.webp",
   },
   {
     name: "Noel Arzola",
-    src: "https://www.noelarzola.com/img/hello.webp",
-    profile: "https://www.noelarzola.com/img/hello.webp",
+    src: "https://noelarzola.com/img/hello.webp",
+    profile: "https://noelarzola.com/img/hello.webp",
   },
   {
     name: "Noel Arzola",
-    src: "https://www.noelarzola.com/img/hello.webp",
-    profile: "https://www.noelarzola.com/img/hello.webp",
+    src: "https://noelarzola.com/img/hello.webp",
+    profile: "https://noelarzola.com/img/hello.webp",
   },
   {
     name: "Noel Arzola",
-    src: "https://www.noelarzola.com/img/hello.webp",
-    profile: "https://www.noelarzola.com/img/hello.webp",
+    src: "https://noelarzola.com/img/hello.webp",
+    profile: "https://noelarzola.com/img/hello.webp",
   },
   {
     name: "Noel Arzola",
-    src: "https://www.noelarzola.com/img/hello.webp",
-    profile: "https://www.noelarzola.com/img/hello.webp",
+    src: "https://noelarzola.com/img/hello.webp",
+    profile: "https://noelarzola.com/img/hello.webp",
   },
   {
     name: "Noel Arzola",
-    src: "https://www.noelarzola.com/img/hello.webp",
-    profile: "https://www.noelarzola.com/img/hello.webp",
+    src: "https://noelarzola.com/img/hello.webp",
+    profile: "https://noelarzola.com/img/hello.webp",
   },
 ];
 
