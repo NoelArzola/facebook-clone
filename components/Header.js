@@ -57,7 +57,7 @@ function Header() {
           layout="fixed"
         />
         <p className="flex items-center whitespace-nowrap font-semibold pr-3">
-          Noel Arzola
+          {session.data.user.name}
         </p>
         <ViewGridIcon className="icon" />
         <ChatIcon className="icon" />
