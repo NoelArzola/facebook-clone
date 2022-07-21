@@ -9,11 +9,11 @@ import {
   getFirestore,
   serverTimestamp,
 } from "firebase/firestore";
+import { db } from "../firebase";
 
 function InputBox() {
   const session = useSession();
   const inputRef = useRef(null);
-  const db = getFirestore();
 
   const sendPost = (e) => {
     e.preventDefault();

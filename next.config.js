@@ -13,4 +13,5 @@ module.exports = {
       "www.noelarzola.com",
     ],
   },
+  experimental: { images: { allowFutureImage: true } },
 };
