@@ -1,13 +1,7 @@
 import React from "react";
 import StoryCard from "./StoryCard";
-import InputBox from "./InputBox";
 
 const stories = [
-  {
-    name: "Noel Arzola",
-    src: "https://noelarzola.com/img/hello.webp",
-    profile: "https://noelarzola.com/img/hello.webp",
-  },
   {
     name: "Noel Arzola",
     src: "https://noelarzola.com/img/hello.webp",

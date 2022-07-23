@@ -19,7 +19,7 @@ import { signOut, useSession } from "next-auth/react";
 function Header() {
   const session = useSession();
   return (
-    <div className="flex items-center justify-between sticky top-0 z-50 bg-white shadow-md p-2 lg:px-5">
+    <div className="flex items-center justify-between sticky top-0 z-50 bg-white shadow-md px-2 lg:px-5">
       <div className="flex items-center">
         <Image
           src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-facebook-2019-circle-512.png"
@@ -39,7 +39,7 @@ function Header() {
       <div>
         <div className="flex justify-center flex-grow">
           <div className="flex space-x-6 md:space-x-2">
-            <HeaderIcon active Icon={HomeIcon} />
+            <HeaderIcon active Icon={HomeIcon} ariaLabel="Home" />
             <HeaderIcon Icon={FlagIcon} />
             <HeaderIcon Icon={PlayIcon} />
             <HeaderIcon Icon={ShoppingCartIcon} />
