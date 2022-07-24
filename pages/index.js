@@ -28,16 +28,14 @@ export default function Home({ session, posts }) {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-  const posts = await db
-    .collection("posts")
-    .orderedBy("timestamp", "desc")
-    .get();
+  const posts = await db.collection("posts").orderBy("timestamp", "desc").get();
 
   const docs = posts.docs.map((post) => ({
     id: post.Id,
     ...post.data(),
     timestamp: null,
   }));
+
   return {
     props: {
       session,

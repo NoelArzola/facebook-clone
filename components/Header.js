@@ -19,7 +19,7 @@ import { signOut, useSession } from "next-auth/react";
 function Header() {
   const session = useSession();
   return (
-    <div className="flex items-center justify-between sticky top-0 z-50 bg-white shadow-md px-2 lg:px-5">
+    <header className="flex items-center justify-between sticky top-0 z-50 bg-white shadow-md px-2 lg:px-5">
       <div className="flex items-center">
         <Image
           src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-facebook-2019-circle-512.png"
@@ -51,20 +51,20 @@ function Header() {
         <Image
           onClick={signOut}
           className="rounded-full cursor-pointer"
-          src={session.data.user.image}
+          src={session.user.src}
           width={40}
           height={40}
           layout="fixed"
         />
         <p className="flex items-center whitespace-nowrap font-semibold pr-3">
-          {session.data.user.name}
+          {session.user.name}
         </p>
         <ViewGridIcon className="icon" />
         <ChatIcon className="icon" />
         <BellIcon className="icon" />
         <ChevronDownIcon className="icon" />
       </div>
-    </div>
+    </header>
   );
 }
 

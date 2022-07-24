@@ -3,12 +3,11 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { EmojiHappyIcon } from "@heroicons/react/outline";
 import { CameraIcon, VideoCameraIcon } from "@heroicons/react/solid";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db, storage } from "../firebase";
-import { ref, uploadString } from "firebase/storage";
+import firebase from "firebase";
 
 function InputBox() {
-  const session = useSession();
+  const [session] = useSession();
   const inputRef = useRef(null);
   const filePickerRef = useRef(null);
   const [imageToPost, setImageToPost] = useState(null);
@@ -16,41 +15,43 @@ function InputBox() {
   const sendPost = (e) => {
     e.preventDefault();
     if (!inputRef.current.value) return;
-    addDoc(collection(db, "posts"), {
-      message: inputRef.current.value,
-      name: session.data.user.name,
-      email: session.data.user.email,
-      image: session.data.user.image,
-      timestamp: serverTimestamp(),
-    }).then((doc) => {
-      if (imageToPost) {
-        const storageRef = ref(storage, `posts/${doc.id}`);
-        const uploadTask = uploadString(storageRef, imageToPost, "data_url");
+    db.collection("posts")
+      .add({
+        message: inputRef.current.value,
+        name: session.user.name,
+        email: session.user.email,
+        image: session.user.image,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      })
+      .then((doc) => {
+        if (imageToPost) {
+          const uploadTask = storage
+            .ref(`posts/${doc.id}`)
+            .putString(imageToPost, "data_url");
 
-        console.log(uploadTask);
+          removeImage();
 
-        removeImage();
-
-        uploadTask.on(
-          "state_change",
-          null,
-          (error) => console.error(error),
-          () => {
-            ref(storage, "posts")
-              .child(doc.id)
-              .getDownloadURL()
-              .then((url) => {
-                db.collection("posts").doc(doc.id).set(
-                  {
-                    postImage: url,
-                  },
-                  { merge: true }
-                );
-              });
-          }
-        );
-      }
-    });
+          uploadTask.on(
+            "state_change",
+            null,
+            (error) => console.error(error),
+            () => {
+              storage
+                .ref("posts")
+                .child(doc.id)
+                .getDownloadURL()
+                .then((url) => {
+                  db.collection("posts").doc(doc.id).set(
+                    {
+                      postImage: url,
+                    },
+                    { merge: true }
+                  );
+                });
+            }
+          );
+        }
+      });
     inputRef.current.value = "";
   };
 
@@ -73,7 +74,7 @@ function InputBox() {
       <div className="flex space-x-4 p-4 items-center">
         <Image
           className="rounded-full"
-          src={session.data.user.image}
+          src={session.user.image}
           width={40}
           height={40}
           layout="fixed"
@@ -82,7 +83,7 @@ function InputBox() {
           <input
             className="rounded-full h-12 bg-gray-100 flex-grow px-5 focus:outline-none"
             type="text"
-            placeholder={`What's on your mind, ${session.data.user.name}?`}
+            placeholder={`What's on your mind, ${session.user.name}?`}
             ref={inputRef}
           />
           <button hidden type="submit" onClick={sendPost}>
