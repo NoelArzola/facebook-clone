@@ -18,12 +18,12 @@ function Login() {
         Login With Facebook
       </h1>
       <p className="text-xs mt-24 max-w-sm">
-        <span className="font-bold text-gray-400">Privacy Policy:</span>
+        <span className="font-bold text-gray-400">Privacy Policy: </span>
         Short and sweet, your data is your data and the only access I have is
         what's needed for you to login and display your name. This includes
-        things like your email, name, profile photo. Auth is handled by Next
-        Auth and Facebook, so I don't directly touch any of it other than to
-        customize your experience.
+        things like your email, name, profile photo to customize your
+        experience. Authentication is handled by Next Auth and Facebook, so I
+        don't directly touch any of it.
       </p>
     </div>
   );
