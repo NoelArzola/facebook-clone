@@ -17,7 +17,7 @@ import HeaderIcon from "./HeaderIcon";
 import { signOut, useSession } from "next-auth/react";
 
 function Header() {
-  const session = useSession();
+  const { data: session } = useSession();
   return (
     <header className="flex items-center justify-between sticky top-0 z-50 bg-white shadow-md px-2 lg:px-5">
       <div className="flex items-center">

@@ -7,7 +7,7 @@ import { db, storage } from "../firebase";
 import firebase from "firebase";
 
 function InputBox() {
-  const [session] = useSession();
+  const { data: session } = useSession();
   const inputRef = useRef(null);
   const filePickerRef = useRef(null);
   const [imageToPost, setImageToPost] = useState(null);
