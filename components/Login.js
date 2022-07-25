@@ -17,7 +17,7 @@ function Login() {
       >
         Login With Facebook
       </h1>
-      <p className="text-xs">
+      <p className="text-xs mt-24 max-w-sm">
         <span className="font-bold text-gray-400">Privacy Policy:</span>
         Short and sweet, your data is your data and the only access I have is
         what's needed for you to login and display your name. This includes
