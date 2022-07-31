@@ -8,22 +8,22 @@ const stories = [
     profile: "https://noelarzola.com/img/hello.webp",
   },
   {
-    name: "Noel Arzola",
+    name: "Noel Arzola Jr",
     src: "https://noelarzola.com/img/hello.webp",
     profile: "https://noelarzola.com/img/hello.webp",
   },
   {
-    name: "Noel Arzola",
+    name: "Junior",
     src: "https://noelarzola.com/img/hello.webp",
     profile: "https://noelarzola.com/img/hello.webp",
   },
   {
-    name: "Noel Arzola",
+    name: "JR",
     src: "https://noelarzola.com/img/hello.webp",
     profile: "https://noelarzola.com/img/hello.webp",
   },
   {
-    name: "Noel Arzola",
+    name: "Noel Arzola II",
     src: "https://noelarzola.com/img/hello.webp",
     profile: "https://noelarzola.com/img/hello.webp",
   },
@@ -32,9 +32,9 @@ const stories = [
 function Stories() {
   return (
     <div className="flex justify-center space-x-3 mx-auto">
-      {stories.map((story) => (
+      {stories.map((story, index) => (
         <StoryCard
-          key={story.src}
+          key={index}
           name={story.name}
           src={story.src}
           profile={story.profile}

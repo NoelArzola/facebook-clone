@@ -1,5 +1,6 @@
 import React from "react";
 import { ChatAltIcon, ShareIcon, ThumbUpIcon } from "@heroicons/react/outline";
+import Image from "next/image";
 
 function Post({ name, message, timestamp, image, postImage }) {
   return (
@@ -21,7 +22,9 @@ function Post({ name, message, timestamp, image, postImage }) {
               </p>
             ) : (
               <p className="text-xs text-gray-400">
-                Loading<span className="animate-bounce">...</span>
+                Loading<span className="animate-bounce">.</span>
+                <span className="animate-bounce">.</span>
+                <span className="animate-bounce">.</span>
               </p>
             )}
           </div>
@@ -30,7 +33,7 @@ function Post({ name, message, timestamp, image, postImage }) {
       </div>
       {postImage && (
         <div className="relative h-56 md:h-96 bg-white">
-          <Image src={image} objectFit="cover" layout="fill" />
+          <Image src={postImage} objectFit="cover" layout="fill" />
         </div>
       )}
       <div className="flex justify-between items-center rounded-b-2xl bg-white shadow-md text-gray-400 border-t">

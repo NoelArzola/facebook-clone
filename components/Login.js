@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { signIn } from "next-auth/react";
+import { signIn } from "next-auth/client";
 
 function Login() {
   return (
@@ -17,13 +17,13 @@ function Login() {
       >
         Login With Facebook
       </h1>
-      <p className="text-xs mt-24 max-w-sm">
+      <p className="text-xs mt-24 max-w-md">
         <span className="font-bold text-gray-400">Privacy Policy: </span>
-        Short and sweet, your data is your data and the only access I have is
-        what's needed for you to login and display your name. This includes
-        things like your email, name, profile photo to customize your
-        experience. Authentication is handled by Next Auth and Facebook, so I
-        don't directly touch any of it.
+        This is a portfolio project. Short and sweet, your data is your data and
+        the only access I have is what's needed for you to login and have a
+        custom experience. This includes your email, name, and profile photo.
+        Authentication is handled by Next Auth and Facebook, so I don't access
+        any sensitive data.
       </p>
     </div>
   );

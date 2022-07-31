@@ -1,5 +1,5 @@
 import { React, useRef, useState } from "react";
-import { useSession } from "next-auth/react";
+import { useSession } from "next-auth/client";
 import Image from "next/image";
 import { EmojiHappyIcon } from "@heroicons/react/outline";
 import { CameraIcon, VideoCameraIcon } from "@heroicons/react/solid";
@@ -7,7 +7,7 @@ import { db, storage } from "../firebase";
 import firebase from "firebase";
 
 function InputBox() {
-  const { data: session } = useSession();
+  const [session] = useSession();
   const inputRef = useRef(null);
   const filePickerRef = useRef(null);
   const [imageToPost, setImageToPost] = useState(null);
@@ -57,7 +57,7 @@ function InputBox() {
 
   const addImageToPost = (e) => {
     const reader = new FileReader();
-    if (e.target.files) {
+    if (e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0]);
     }
     reader.onload = (readerEvent) => {

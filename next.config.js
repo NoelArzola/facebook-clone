@@ -5,13 +5,14 @@ const nextConfig = {
 };
 
 module.exports = {
+  nextConfig,
   images: {
     domains: [
       "platform-lookaside.fbsbx.com",
       "firebasestorage.googleapis.com",
       "noelarzola.com",
-      'cdn0.iconfinder.com',
-      '1000logos.net',
+      "cdn0.iconfinder.com",
+      "1000logos.net",
     ],
   },
 };

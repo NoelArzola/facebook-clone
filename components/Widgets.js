@@ -1,27 +1,28 @@
 import { SearchIcon } from "@heroicons/react/outline";
 import { DotsHorizontalIcon, VideoCameraIcon } from "@heroicons/react/solid";
+import Contact from "./Contact";
 import React from "react";
 
 const contacts = [
   {
     src: "https://noelarzola.com/img/hello.webp",
-    name: "Noel Arzola",
+    name: "Noel Arzola II",
   },
   {
     src: "https://noelarzola.com/img/hello.webp",
-    name: "Noel Arzola",
+    name: "Noel Arzola III",
   },
   {
     src: "https://noelarzola.com/img/hello.webp",
-    name: "Noel Arzola",
+    name: "Noel Arzola IV",
   },
   {
     src: "https://noelarzola.com/img/hello.webp",
-    name: "Noel Arzola",
+    name: "Noel Arzola V",
   },
   {
     src: "https://noelarzola.com/img/hello.webp",
-    name: "Noel Arzola",
+    name: "Noel Arzola VI",
   },
 ];
 
@@ -37,8 +38,8 @@ function Widgets() {
         </div>
       </div>
 
-      {contacts.map((contact) => (
-        <Contact key={contact.name} src={contact.src} name={contact.name} />
+      {contacts.map((contact, index) => (
+        <Contact key={index} src={contact.src} name={contact.name} />
       ))}
     </div>
   );

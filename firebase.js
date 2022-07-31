@@ -3,7 +3,7 @@ import "firebase/firestore";
 import "firebase/storage"; //firestore?
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAzZzhslYEicNJxog7hMZKuxEEUX9mRkLU",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "facebook-f105a.firebaseapp.com",
   databaseURL: "https://facebook-f105a-default-rtdb.firebaseio.com",
   projectId: "facebook-f105a",
