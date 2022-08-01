@@ -30,7 +30,7 @@ function Widgets() {
   return (
     <div className="hidden lg:flex flex-col w-60 mt-5 pt-2">
       <div className="flex justify-between items-center text-gray-500 mb-5">
-        <h2 className="text-xl">Contacts</h2>
+        <h2 className="text-xl dark:text-[#B0B3B8]">Contacts</h2>
         <div className="flex space-x-2">
           <VideoCameraIcon className="h-6" />
           <SearchIcon className="h-6" />

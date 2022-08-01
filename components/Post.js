@@ -5,7 +5,7 @@ import Image from "next/image";
 function Post({ name, message, timestamp, image, postImage }) {
   return (
     <div className="flex flex-col">
-      <div className="p-5 bg-white mt-5 rounded-t-2xl shadow-sm">
+      <div className="p-5 bg-white dark:bg-[#242526] mt-5 rounded-t-2xl shadow-sm">
         <div>
           <img
             src={image}
@@ -15,7 +15,7 @@ function Post({ name, message, timestamp, image, postImage }) {
             className="rounded-full"
           />
           <div>
-            <p className="font-medium">{name}</p>
+            <p className="font-medium dark:text-[#E4E6EB]">{name}</p>
             {timestamp ? (
               <p className="text-xs text-gray-400">
                 {new Date(timestamp?.toDate()).toLocaleString()}
@@ -29,14 +29,14 @@ function Post({ name, message, timestamp, image, postImage }) {
             )}
           </div>
         </div>
-        <p className="pt-4">{message}</p>
+        <p className="pt-4 dark:text-[#E4E6EB]">{message}</p>
       </div>
       {postImage && (
-        <div className="relative h-56 md:h-96 bg-white">
+        <div className="relative h-56 md:h-96 bg-white dark:bg-[#242526]">
           <Image src={postImage} objectFit="cover" layout="fill" />
         </div>
       )}
-      <div className="flex justify-between items-center rounded-b-2xl bg-white shadow-md text-gray-400 border-t">
+      <div className="flex justify-between items-center rounded-b-2xl bg-white dark:bg-[#242526] shadow-md text-gray-400 border-t dark:border-[rgba(255,255,255,.1)]">
         <div className="inputIcon rounded-bl-2xl">
           <ThumbUpIcon className="h-4" />
           <p className="text-xs sm:text-base">Like</p>

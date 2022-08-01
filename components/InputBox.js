@@ -70,7 +70,7 @@ function InputBox() {
   };
 
   return (
-    <div className="bg-white p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-6">
+    <div className="bg-white dark:bg-[#242526] p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-6">
       <div className="flex space-x-4 p-4 items-center">
         <Image
           className="rounded-full"
@@ -81,7 +81,7 @@ function InputBox() {
         />
         <form className="flex flex-1">
           <input
-            className="rounded-full h-12 bg-gray-100 flex-grow px-5 focus:outline-none"
+            className="rounded-full h-12 bg-gray-100 dark:bg-[#3A3B3C] dark:text-[#E4E6EB] flex-grow px-5 focus:outline-none"
             type="text"
             placeholder={`What's on your mind, ${session.user.name}?`}
             ref={inputRef}
@@ -100,17 +100,21 @@ function InputBox() {
           </div>
         )}
       </div>
-      <div className="flex justify-evenly p-3 border-t">
-        <div className="inputIcon">
+      <div className="flex justify-evenly p-3 border-t dark:border-[rgba(255,255,255,.1)]">
+        <div className="inputIcon inputBox__inputIcon">
           <VideoCameraIcon className="h-7 text-red-500" />
-          <p className="text-xs sm:text-sm xl:text-base">Live Video</p>
+          <p className="text-xs sm:text-sm xl:text-base dark:text-[#B0B3B8]">
+            Live Video
+          </p>
         </div>
         <div
-          className="inputIcon"
+          className="inputIcon inputBox__inputIcon"
           onClick={() => filePickerRef.current.click()}
         >
           <CameraIcon className="h-7 text-green-400" />
-          <p className="text-xs sm:text-sm xl:text-base">Photo/Video</p>
+          <p className="text-xs sm:text-sm xl:text-base dark:text-[#B0B3B8]">
+            Photo/Video
+          </p>
           <input
             onChange={addImageToPost}
             type="file"
@@ -118,9 +122,11 @@ function InputBox() {
             ref={filePickerRef}
           />
         </div>
-        <div className="inputIcon">
+        <div className="inputIcon inputBox__inputIcon">
           <EmojiHappyIcon className="h-7 text-yellow-300" />
-          <p className="text-xs sm:text-m xl:text-base">Feeling/Activity</p>
+          <p className="text-xs sm:text-m xl:text-base dark:text-[#B0B3B8]">
+            Feeling/Activity
+          </p>
         </div>
       </div>
     </div>

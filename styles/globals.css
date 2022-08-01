@@ -4,10 +4,14 @@
 
 @layer components {
   .icon {
-    @apply bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300 hidden xl:inline-flex text-gray-700 p-2 h-10 w-10;
+    @apply cursor-pointer bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300 hidden xl:inline-flex text-gray-700 p-2 h-10 w-10 hover:dark:bg-[#3A3B3C];
   }
 
   .inputIcon {
-    @apply flex items-center space-x-1 hover:bg-gray-100 flex-grow justify-center p-2 rounded-xl;
+    @apply cursor-pointer flex items-center space-x-1 hover:bg-gray-100 flex-grow justify-center p-2  hover:dark:bg-[#3A3B3C];
+  }
+
+  .inputBox__inputIcon {
+    @apply rounded-xl;
   }
 }
