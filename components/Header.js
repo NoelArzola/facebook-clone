@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+import { useState } from "react";
 import {
   BellIcon,
   ChatIcon,
-  ChevronDownIcon,
   HomeIcon,
   UserGroupIcon,
   ViewGridIcon,
@@ -18,6 +19,17 @@ import { signOut, useSession } from "next-auth/client";
 
 function Header() {
   const [session] = useSession();
+
+  const [isDarkMode, setDarkMode] = useState(false);
+  const toggleDarkMode = (checked) => {
+    setDarkMode(checked);
+    if (!isDarkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  };
+
   return (
     <header className="flex items-center justify-between sticky top-0 z-50 bg-white dark:bg-[#242526] shadow-md px-2 lg:px-5">
       <div className="flex items-center">
@@ -59,7 +71,7 @@ function Header() {
             height={40}
             layout="fixed"
           />
-          <p className="flex items-center whitespace-nowrap font-semibold pr-3 dark:text-[#E4E6EB]">
+          <p className="hidden sm:flex items-center whitespace-nowrap font-semibold pr-3 dark:text-[#E4E6EB]">
             {session.user.name}
           </p>
         </div>
@@ -67,7 +79,11 @@ function Header() {
         <ViewGridIcon className="icon dark:bg-[#3A3B3C] dark:text-[#E4E6EB]" />
         <ChatIcon className="icon dark:bg-[#3A3B3C] dark:text-[#E4E6EB]" />
         <BellIcon className="icon dark:bg-[#3A3B3C] dark:text-[#E4E6EB]" />
-        <ChevronDownIcon className="icon dark:bg-[#3A3B3C] dark:text-[#E4E6EB]" />
+        <DarkModeSwitch
+          className="icon dark:bg-[#3A3B3C] dark:text-[#E4E6EB]"
+          checked={isDarkMode}
+          onChange={toggleDarkMode}
+        />
       </div>
     </header>
   );
