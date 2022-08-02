@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { ChatAltIcon, ShareIcon, ThumbUpIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 
 function Post({ name, message, timestamp, image, postImage }) {
+  const [liked, setLiked] = useState(false);
+
+  const handleLikes = () => {
+    if (liked) {
+      setLiked(false);
+    } else {
+      setLiked(true);
+    }
+  };
+
   return (
     <div className="flex flex-col">
       <div className="p-5 bg-white dark:bg-[#242526] mt-5 rounded-t-2xl shadow-sm">
@@ -37,7 +47,10 @@ function Post({ name, message, timestamp, image, postImage }) {
         </div>
       )}
       <div className="flex justify-between items-center rounded-b-2xl bg-white dark:bg-[#242526] shadow-md text-gray-400 border-t dark:border-[rgba(255,255,255,.1)]">
-        <div className="inputIcon rounded-bl-2xl">
+        <div
+          className={`inputIcon rounded-bl-2xl ${liked && "text-blue-500"}`}
+          onClick={() => handleLikes()}
+        >
           <ThumbUpIcon className="h-4" />
           <p className="text-xs sm:text-base">Like</p>
         </div>
