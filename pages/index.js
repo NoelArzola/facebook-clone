@@ -12,7 +12,7 @@ export default function Home({ session, posts }) {
   return (
     <div className="h-screen bg-gray-100 dark:bg-[#18191A] overflow-hidden">
       <Head>
-        <title>Facebook</title>
+        <title>Facebook (Clone)</title>
       </Head>
 
       <Header />
