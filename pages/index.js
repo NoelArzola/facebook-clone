@@ -17,7 +17,7 @@ export default function Home({ session, posts }) {
 
       <Header />
 
-      <main className="flex justify-center">
+      <main className="flex justify-center xl:-ml-32">
         <Sidebar />
         <Feed posts={posts} />
         <Widgets />
