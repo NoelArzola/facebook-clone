@@ -13,6 +13,7 @@ module.exports = {
       "noelarzola.com",
       "cdn0.iconfinder.com",
       "1000logos.net",
+      "scontent-ort2-1.xx.fbcdn.net",
     ],
   },
 };

@@ -64,10 +64,10 @@ function Header() {
           </p>
         </div>
 
-        <ViewGridIcon className="icon dark:bg-[#3A3B3C] text-[#E4E6EB]" />
-        <ChatIcon className="icon dark:bg-[#3A3B3C] text-[#E4E6EB]" />
-        <BellIcon className="icon dark:bg-[#3A3B3C] text-[#E4E6EB]" />
-        <ChevronDownIcon className="icon dark:bg-[#3A3B3C] text-[#E4E6EB]" />
+        <ViewGridIcon className="icon dark:bg-[#3A3B3C] dark:text-[#E4E6EB]" />
+        <ChatIcon className="icon dark:bg-[#3A3B3C] dark:text-[#E4E6EB]" />
+        <BellIcon className="icon dark:bg-[#3A3B3C] dark:text-[#E4E6EB]" />
+        <ChevronDownIcon className="icon dark:bg-[#3A3B3C] dark:text-[#E4E6EB]" />
       </div>
     </header>
   );

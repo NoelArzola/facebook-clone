@@ -3,29 +3,29 @@ import StoryCard from "./StoryCard";
 
 const stories = [
   {
-    name: "Noel Arzola",
-    src: "https://noelarzola.com/img/hello.webp",
-    profile: "https://noelarzola.com/img/hello.webp",
+    name: "Chelsea Craven",
+    src: "chelsea-story.jpg",
+    profile: "../img/chelsea-profile.jpg",
   },
   {
-    name: "Noel Arzola Jr",
-    src: "https://noelarzola.com/img/hello.webp",
-    profile: "https://noelarzola.com/img/hello.webp",
+    name: "Michelle Arzola",
+    src: "michelle-story.jpg",
+    profile: "../img/michelle-profile.jpg",
   },
   {
-    name: "Junior",
-    src: "https://noelarzola.com/img/hello.webp",
-    profile: "https://noelarzola.com/img/hello.webp",
+    name: "Katie Little",
+    src: "katie-story.jpg",
+    profile: "../img/katie-profile.jpg",
   },
   {
-    name: "JR",
-    src: "https://noelarzola.com/img/hello.webp",
-    profile: "https://noelarzola.com/img/hello.webp",
+    name: "Asia Jennings",
+    src: "asia-story.jpg",
+    profile: "../img/asia-profile.jpg",
   },
   {
-    name: "Noel Arzola II",
-    src: "https://noelarzola.com/img/hello.webp",
-    profile: "https://noelarzola.com/img/hello.webp",
+    name: "Adam Tucker",
+    src: "tucker-story.jpg",
+    profile: "../img/tucker-profile.jpg",
   },
 ];
 

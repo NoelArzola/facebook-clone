@@ -5,24 +5,28 @@ import React from "react";
 
 const contacts = [
   {
-    src: "https://noelarzola.com/img/hello.webp",
-    name: "Noel Arzola II",
+    src: "asia-profile.jpg",
+    name: "Asia Jennings",
   },
   {
-    src: "https://noelarzola.com/img/hello.webp",
-    name: "Noel Arzola III",
+    src: "michelle-profile.jpg",
+    name: "Michelle Arzola",
   },
   {
-    src: "https://noelarzola.com/img/hello.webp",
-    name: "Noel Arzola IV",
+    src: "katie-profile.jpg",
+    name: "Katie Little",
   },
   {
-    src: "https://noelarzola.com/img/hello.webp",
-    name: "Noel Arzola V",
+    src: "hector-profile.jpg",
+    name: "Hector Pagan",
   },
   {
-    src: "https://noelarzola.com/img/hello.webp",
-    name: "Noel Arzola VI",
+    src: "tucker-profile.jpg",
+    name: "Adam Tucker",
+  },
+  {
+    src: "szuba-profile.jpg",
+    name: "Ed Szuba",
   },
 ];
 
