@@ -17,7 +17,7 @@ function Post({ name, message, timestamp, image, postImage }) {
     <div className="flex flex-col">
       <div className="p-5 bg-white dark:bg-[#242526] mt-5 rounded-t-2xl shadow-sm">
         <div>
-          <img
+          <Image
             src={image}
             width={40}
             height={40}
