@@ -1,4 +1,4 @@
-import { React, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useSession } from "next-auth/client";
 import Image from "next/image";
 import { EmojiHappyIcon } from "@heroicons/react/outline";
@@ -8,19 +8,19 @@ import firebase from "firebase";
 
 function InputBox() {
   const [session] = useSession();
-  const inputRef = useRef(null);
-  const filePickerRef = useRef(null);
-  const [imageToPost, setImageToPost] = useState(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const filePickerRef = useRef<HTMLInputElement>(null);
+  const [imageToPost, setImageToPost] = useState<string | null>(null);
 
-  const sendPost = (e) => {
+  const sendPost = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (!inputRef.current.value) return;
+    if (!inputRef.current?.value) return;
     db.collection("posts")
       .add({
         message: inputRef.current.value,
-        name: session.user.name,
-        email: session.user.email,
-        image: session.user.image,
+        name: session?.user?.name,
+        email: session?.user?.email,
+        image: session?.user?.image,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .then((doc) => {
@@ -55,13 +55,13 @@ function InputBox() {
     inputRef.current.value = "";
   };
 
-  const addImageToPost = (e) => {
+  const addImageToPost = (e: React.ChangeEvent<HTMLInputElement>) => {
     const reader = new FileReader();
-    if (e.target.files[0]) {
+    if (e.target.files?.[0]) {
       reader.readAsDataURL(e.target.files[0]);
     }
     reader.onload = (readerEvent) => {
-      setImageToPost(readerEvent.target.result);
+      setImageToPost(readerEvent.target?.result as string);
     };
   };
 
@@ -74,7 +74,7 @@ function InputBox() {
       <div className="flex space-x-4 p-4 items-center">
         <Image
           className="rounded-full"
-          src={session.user.image}
+          src={session?.user?.image || ""}
           width={40}
           height={40}
           layout="fixed"
@@ -83,7 +83,7 @@ function InputBox() {
           <input
             className="rounded-full h-12 bg-gray-100 dark:bg-[#3A3B3C] dark:text-[#E4E6EB] flex-grow px-5 focus:outline-none"
             type="text"
-            placeholder={`What's on your mind, ${session.user.name}?`}
+            placeholder={`What's on your mind, ${session?.user?.name}?`}
             ref={inputRef}
           />
           <button hidden type="submit" onClick={sendPost}>
@@ -109,6 +109,7 @@ function InputBox() {
         </div>
         <div
           className="inputIcon inputBox__inputIcon"
+          // @ts-ignore
           onClick={() => filePickerRef.current.click()}
         >
           <CameraIcon className="h-7 text-green-400" />

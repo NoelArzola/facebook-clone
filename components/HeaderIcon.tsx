@@ -1,6 +1,12 @@
 import React from "react";
 
-function HeaderIcon({ Icon, active, ariaLabel }) {
+interface HeaderIconProps {
+  Icon: any;
+  active?: boolean; // @TODO examine this
+  ariaLabel?: string;
+}
+
+function HeaderIcon({ Icon, active, ariaLabel }: HeaderIconProps) {
   return (
     <a
       className={`flex items-center ${

@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import { signIn } from "next-auth/client";
-import ImgLoader from "../utils/ImgLoader";
+// import ImgLoader from "../utils/ImgLoader";
 
 function Login() {
   return (
@@ -15,6 +15,7 @@ function Login() {
       />
       <h1
         className="mt-4 p-5 bg-blue-500 rounded-full text-white text-center cursor-pointer hover:bg-blue-700"
+        // @ts-ignore
         onClick={signIn}
       >
         Login With Facebook
@@ -30,5 +31,7 @@ function Login() {
     </div>
   );
 }
+
+// @TODO insert next image loader here
 
 export default Login;

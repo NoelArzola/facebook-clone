@@ -2,7 +2,11 @@ import React from "react";
 import Image from "next/image";
 import ImgLoader from "../utils/ImgLoader";
 
-function Contact({ src, name }) {
+interface ContactProps {
+  src: string;
+  name: string;
+}
+function Contact({ src, name }: ContactProps) {
   return (
     <div className="flex items-center space-x-3 mb-2 relative hover:bg-gray-200 hover:dark:bg-[#3A3B3C] cursor-pointer p-2 rounded-xl">
       <Image

@@ -1,7 +1,13 @@
 import React from "react";
 import Image from "next/image";
 
-function SidebarRow({ src, Icon, title }) {
+interface SidebarRowProps {
+  readonly src?: string | null | undefined;
+  readonly Icon?: any;
+  readonly title: string | null | undefined;
+}
+
+function SidebarRow({ src, Icon, title }: SidebarRowProps) {
   return (
     <div className="flex items-center space-x-2 p-4 hover:bg-gray-200 hover:dark:bg-[#3A3B3C] rounded-xl cursor-pointer">
       {src && (

@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 import Header from "../components/Header";
 import { getSession } from "next-auth/client";
@@ -6,8 +7,14 @@ import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import Widgets from "../components/Widgets";
 import { db } from "../firebase";
+// import Posts from "../components/Feed";
 
-export default function Home({ session, posts }) {
+interface HomeProps {
+  session: any;
+  posts: any[];
+}
+
+export default function Home({ session, posts }: HomeProps) {
   if (!session) return <Login />;
   return (
     <div className="h-screen bg-gray-100 dark:bg-[#18191A] overflow-hidden">
@@ -26,7 +33,7 @@ export default function Home({ session, posts }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: any) {
   const session = await getSession(context);
   const posts = await db.collection("posts").orderBy("timestamp", "desc").get();
   const docs = posts.docs.map((post) => ({
@@ -37,8 +44,9 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      session: session,
+      session,
       posts: docs,
     },
   };
 }
+// @TODO fix any if possible!

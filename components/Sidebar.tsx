@@ -13,9 +13,11 @@ import {
 
 function Sidebar() {
   const [session] = useSession();
+  const userImage = session?.user?.image;
+  const userName = session?.user?.name;
   return (
     <div className="hidden sm:block p-2 mt-5 max-w-[600px] xl:min-w-[300px] dark:text-[#E4E6EB]">
-      <SidebarRow src={session.user.image} title={session.user.name} />
+      <SidebarRow src={userImage} title={userName} />
       <SidebarRow Icon={UsersIcon} title="Friends" />
       <SidebarRow Icon={UserGroupIcon} title="Groups" />
       <SidebarRow Icon={ShoppingBagIcon} title="Marketplace" />
