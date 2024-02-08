@@ -32,9 +32,9 @@ const stories = [
 function Stories() {
   return (
     <div className="flex justify-center space-x-3 mx-auto">
-      {stories.map((story, index) => (
+      {stories.map((story) => (
         <StoryCard
-          key={index}
+          key={story.name}
           name={story.name}
           src={story.src}
           profile={story.profile}

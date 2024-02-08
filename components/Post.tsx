@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { ChatAltIcon, ShareIcon, ThumbUpIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 
-function Post({ name, message, timestamp, image, postImage }) {
+interface PostProps {
+  name: string;
+  message: string;
+  timestamp: any; // @TODO fix this any
+  image: string;
+  postImage: string;
+}
+function Post({ name, message, timestamp, image, postImage }: PostProps) {
   const [liked, setLiked] = useState(false);
 
   const handleLikes = () => {
@@ -18,7 +25,7 @@ function Post({ name, message, timestamp, image, postImage }) {
       <div className="p-5 bg-white dark:bg-[#242526] mt-5 rounded-t-2xl shadow-sm">
         <div>
           <img
-            src={image}
+            src={image || "../public/img/fallback-profile.jpeg"}
             width={40}
             height={40}
             alt=""

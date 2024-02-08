@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import Image from "next/image";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import { useState } from "react";
 import {
   BellIcon,
   ChatIcon,
@@ -19,9 +19,11 @@ import { signOut, useSession } from "next-auth/client";
 
 function Header() {
   const [session] = useSession();
+  const sessionName: string | undefined = session?.name as string | undefined;
+  const sessionImage: string | undefined = session?.image as string | undefined;
 
   const [isDarkMode, setDarkMode] = useState(false);
-  const toggleDarkMode = (checked) => {
+  const toggleDarkMode = (checked: boolean) => {
     setDarkMode(checked);
     if (!isDarkMode) {
       document.body.classList.add("dark");
@@ -62,17 +64,17 @@ function Header() {
       <div className="flex items-center sm:space-x-2 justify-end">
         <div
           className="flex items-center sm:space-x-2 cursor-pointer"
-          onClick={signOut}
+          onClick={() => signOut()}
         >
           <Image
             className="rounded-full cursor-pointer"
-            src={session.user.image}
+            src={sessionImage || ""}
             width={40}
             height={40}
             layout="fixed"
           />
           <p className="hidden sm:flex items-center whitespace-nowrap font-semibold pr-3 dark:text-[#E4E6EB]">
-            {session.user.name}
+            {sessionName}
           </p>
         </div>
 
